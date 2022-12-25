@@ -5,9 +5,9 @@ let turn;
 let good;
 let compTurn;
 let intervalId;
-let strict = false;
+let strict = true;
 let noise = true;
-let on = false;
+let on = true;
 let win;
 
 const turnCounter = document.querySelector("#turn");
@@ -19,29 +19,31 @@ const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
 
-strictButton.addEventListener('click', (event) => {
-  if (strictButton.checked == true) {
-    strict = true;
-  } else {
-    strict = false;
-  }
-});
+// strictButton.addEventListener('click', (event) => {
+//   if (strictButton.checked == true) {
+//     strict = true;
+//   } else {
+//     strict = false;
+//   }
+// });
 
-onButton.addEventListener('click', (event) => {
-  if (onButton.checked == true) {
-    on = true;
-    turnCounter.innerHTML = "-";
-  } else {
-    on = false;
-    turnCounter.innerHTML = "";
-    clearColor();
-    clearInterval(intervalId);
-  }
-});
+// onButton.addEventListener('click', (event) => {
+//   if (onButton.checked == true) {
+//     on = true;
+//     turnCounter.innerHTML = "-";
+//   } else {
+//     on = false;
+//     turnCounter.innerHTML = "";
+//     clearColor();
+//     clearInterval(intervalId);
+//   }
+// });
 
 startButton.addEventListener('click', (event) => {
   if (on || win) {
     play();
+    startButton.style.visibility = "hidden";
+
   }
 });
 
@@ -190,7 +192,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 3 && good) {
+  if (playerOrder.length == 100 && good) {
     winGame();
   }
 
@@ -198,18 +200,24 @@ function check() {
     flashColor();
     turnCounter.innerHTML = "NO!";
     setTimeout(() => {
+        startButton.style.visibility = "visible";
+      }, 1100);
+    
+
+    setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
+      //play();
 
-      if (strict) {
-        play();
-      } else {
-        compTurn = true;
-        flash = 0;
-        playerOrder = [];
-        good = true;
-        intervalId = setInterval(gameTurn, 800);
-      }
+    //   if (strict) {
+    //     play();
+    //   } else {
+    //     compTurn = true;
+    //     flash = 0;
+    //     playerOrder = [];
+    //     good = true;
+    //     intervalId = setInterval(gameTurn, 800);
+    //   }
     }, 800);
 
     noise = false;
@@ -232,64 +240,3 @@ function winGame() {
   on = false;
   win = true;
 }
-
-/* const topLeft = document.querySelector('.top-left-panel');
-const topRight = document.querySelector('.top-right-panel');
-const bottomLeft = document.querySelector('.bottom-left-panel');
-const bottomRight = document.querySelector('.bottom-right-panel');
-
-const getRandomPanel = () => {
-    const panels = [
-        topLeft,
-        topRight,
-        bottomLeft,
-        bottomRight
-    ]
-    return panels[parseInt(Math.random()* panels.length)];
-}
-
-const sequence = [getRandomPanel()];
-let sequenceToGuess = [...sequence];
-
-const flash = panel => {
-    return new Promise((resolve, reject) => {
-        panel.className += ' active';
-        setTimeout(() => {
-            panel.className = panel.className.replace(
-                ' active',
-                ''
-            );
-            setTimeout(() => {
-                resolve();
-            } , 250);
-        }, 800);
-    });
-};
-
-let canClick = false;
-
-const panelClicked = panelClicked => {
-    if (!canClick) return;
-    const expectedPanel = sequenceToGuess.shift();
-    if(expectedPanel === panelClicked) {
-        if(sequenceToGuess.length === 0) {
-            //start new round
-            sequence.push(getRandomPanel());
-            sequenceToGuess = [...sequence];
-            startFlashing();
-        }
-    }
-    else{
-        alert('Game over');
-    }
-}
-
-const startFlashing = async() => {
-    canClick = false;
-    for (const panel of sequence) {
-        await flash(panel);
-    }
-    canClick = true;
-}
-
-startFlashing();*/
