@@ -8,6 +8,7 @@ body {
   }
   
   .button {
+    font-family: 'Amatic SC', cursive;
     border-radius: 50% !important;
     font-size: 1.5em;
     background-color: lightgray;
@@ -15,22 +16,22 @@ body {
   
   #switches {
     position: absolute;
-    font-family: 'Original Surfer', cursive;
-    margin-left: 26px;
+    font-family: 'Amatic SC', cursive;
+    margin-left: 35px;
     margin-top: 110px;
   }
   
   .text2 {
     position: absolute;
-    font-family: 'Original Surfer', cursive;
-    margin-left: 83px;
+    font-family: 'Amatic SC', cursive;
+    margin-left: 107px;
     margin-top: 197px;
   }
   
   .text1 {
     position: absolute;
-    font-family: 'Original Surfer', cursive;
-    margin-left: 19px;
+    font-family: 'Amatic SC', cursive;
+    margin-left: 62px;
     margin-top: 142px;
   }
   
@@ -39,10 +40,10 @@ body {
   }
   
   #title {
-    font-family: 'Original Surfer', cursive;
+    font-family: 'Amatic SC', cursive;
     position: absolute;
     font-size: 40px;
-    margin-left: 35px;
+    margin-left: 85px;
     margin-top: 40px;
   }
   
