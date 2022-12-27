@@ -33,6 +33,7 @@ startButton.addEventListener('click', (event) => {
 tryAgainButton.addEventListener('click', (event) => {
   play();
   gameOverBox.style.visibility = "hidden";
+  menueButton.style.visibility = "hidden";
   boxButton.style.visibility = "hidden";
 });
 
