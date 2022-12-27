@@ -15,37 +15,33 @@ const topLeft = document.querySelector("#topleft");
 const topRight = document.querySelector("#topright");
 const bottomLeft = document.querySelector("#bottomleft");
 const bottomRight = document.querySelector("#bottomright");
-const strictButton = document.querySelector("#strict");
-const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
+const menueButton = document.querySelector("#menue");
+const tryAgainButton = document.querySelector("#TryAgain");
+const gameOverBox = document.querySelector("#GameOverBox");
+const boxButton = document.querySelector(".boxButton");
 
-// strictButton.addEventListener('click', (event) => {
-//   if (strictButton.checked == true) {
-//     strict = true;
-//   } else {
-//     strict = false;
-//   }
-// });
-
-// onButton.addEventListener('click', (event) => {
-//   if (onButton.checked == true) {
-//     on = true;
-//     turnCounter.innerHTML = "-";
-//   } else {
-//     on = false;
-//     turnCounter.innerHTML = "";
-//     clearColor();
-//     clearInterval(intervalId);
-//   }
-// });
 
 startButton.addEventListener('click', (event) => {
   if (on || win) {
     play();
     startButton.style.visibility = "hidden";
-
+    // boxButton.style.visibility = "hidden";
   }
 });
+
+tryAgainButton.addEventListener('click', (event) => {
+  play();
+  gameOverBox.style.visibility = "hidden";
+  boxButton.style.visibility = "hidden";
+});
+
+menueButton.addEventListener('click', (event) => {
+  window.location.href = "homePage.html";
+  gameOverBox.style.visibility = "hidden";
+  boxButton.style.visibility = "hidden";
+});
+
 
 function play() {
   win = false;
@@ -200,24 +196,14 @@ function check() {
     flashColor();
     turnCounter.innerHTML = "NO!";
     setTimeout(() => {
-        startButton.style.visibility = "visible";
-      }, 1100);
+      gameOverBox.style.visibility = "visible"
+      boxButton.style.visibility = "visible";
+      menueButton.style.visibility = "visible";
+    }, 400);
     
-
     setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
-      //play();
-
-    //   if (strict) {
-    //     play();
-    //   } else {
-    //     compTurn = true;
-    //     flash = 0;
-    //     playerOrder = [];
-    //     good = true;
-    //     intervalId = setInterval(gameTurn, 800);
-    //   }
     }, 800);
 
     noise = false;

@@ -2,28 +2,56 @@ body {
     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/nasty_fabric.png)
   }
   
-  /* .toggle {
-    margin-left: 20px;
-    margin-right: 20px;
-  } */
-  
-  /* #switches {
-    position: absolute;
-    font-family: 'Amatic SC', cursive;
-    margin-left: 35px;
-    margin-top: 110px;
-  } */
-  
   .button {
+    visibility: visible;
     font-family: 'Amatic SC', cursive;
     border-radius: 20% !important;
     font-size: 5em;
     height: 2em;
     width: 4em;
-    background-color: lightgray;
+    background-color: aquamarine;
     position: absolute;
-    margin-left: -40px;
+    margin-left: -45px;
     margin-top: 30px;
+  }
+
+  .boxButton{
+    visibility: collapse;
+    font-family: 'Amatic SC', cursive;
+    border-radius: 20% !important;
+    font-size: 30px;
+    height: 65px;
+    width: 150px;
+    position: absolute;
+    margin-left: -75px;
+  }
+
+  #TryAgain{
+    background-color: darkseagreen;
+    margin-top: 0px;
+  }
+
+  #menue{
+    background-color: cornflowerblue;
+    margin-top: 70px;
+  }
+
+  .GameOverBox{
+    visibility: collapse;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    height: 380px;
+    background: firebrick;
+    color: black;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 20px 30px;
+    border-radius: 5%;
   }
   
   .text2 {
@@ -32,17 +60,6 @@ body {
     margin-left: 107px;
     margin-top: 100px;
     font-size: 25px;
-  }
-  
-  /* .text1 {
-    position: absolute;
-    font-family: 'Amatic SC', cursive;
-    margin-left: 62px;
-    margin-top: 142px;
-  } */
-  
-  .text1 span:last-child {
-    padding-left: 70px;
   }
   
   #title {
