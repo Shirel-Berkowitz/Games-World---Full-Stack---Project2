@@ -2,8 +2,13 @@ body {
     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/nasty_fabric.png)
   }
   
+  h1{
+    font-size: 50px;
+    margin: 5px;
+  }
+
   .button {
-    visibility: visible;
+    visibility: collapse;
     font-family: 'Amatic SC', cursive;
     border-radius: 20% !important;
     font-size: 5em;
@@ -16,7 +21,7 @@ body {
   }
 
   .boxButton{
-    visibility: collapse;
+    visibility: visible;
     font-family: 'Amatic SC', cursive;
     border-radius: 20% !important;
     font-size: 30px;
@@ -27,23 +32,24 @@ body {
   }
 
   #TryAgain{
-    background-color: darkseagreen;
+    background-color: rgb(112, 155, 112);
     margin-top: 0px;
   }
 
   #menue{
-    background-color: cornflowerblue;
+    background-color: #c7716a;
     margin-top: 70px;
   }
 
   .GameOverBox{
-    visibility: collapse;
+    visibility: visible;
     font-family: 'Amatic SC', cursive;
     text-align: center;
     margin: 0 auto;
     width: 300px;
     height: 380px;
-    background: firebrick;
+    background: tan;
+    border-style: outset;
     color: black;
     top: 50%;
     left:50%;
