@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signUpStyle.css">
+
+</head>
+<body>
+    <form action="login.html" style="border:1px solid #ccc">
+        <div class="container">
+          <h1>הרשמה</h1>
+          <br><br><p> מלא את הקובץ הזה על מנת להרשם לאתר<p class="bold"> שים לב! ביצירת משתמש אתה מאשר את <a href="">תקנון האתר </a></p></p>
+          <hr>
+      
+          <label for="user"><b>שם משתמש</b></label>
+          <input type="text" placeholder="הכנס שם משתמש" name="user" id="usrename" required>
+
+          <br><label for="email"><b>אימייל</b></label>
+          <input type="email" placeholder="הכנס אימייל" name="email" required>
+      
+          <br><label for="psw"><b>סיסמא</b></label>
+          <input type="password" placeholder="הכנס סיסמא" name="psw" id="password" required>
+      
+          <br><label for="psw-repeat"><b>חזור על הסיסמא</b></label>
+          <input type="password" placeholder="חזור על הסיסמא" name="psw-repeat" required>
+      
+          <br><label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">זכור אותי
+          </label>
+            
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" ><a href="login.html"> ביטול</a></button>
+            <button type="submit" class="signupbtn" onclick="addData()"> הרשם</button>
+          </div>
+        </div>
+      </form>
+      <script src="signUp.js"></script>
+</body>
+</html>

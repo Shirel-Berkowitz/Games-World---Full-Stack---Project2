@@ -168,6 +168,7 @@ body{
     color:chocolate;
     text-align: center;
     right: 100px;
+    font-weight: bold;
 }
 
 .loginbox a:hover{
