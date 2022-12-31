@@ -25,10 +25,12 @@
 	position: fixed;
 	top: 40vh;
 	left: 100vw;
-	height: 70vh;
-	width: 6vw;
-	background:radial-gradient(lightgreen 50%, green);
-	border: 5px solid black;
+	height: 60%;
+	width: 15%;
+	background: url('images/books_pile.png') center;
+	background-size: cover;
+	/* background:radial-gradient(lightgreen 50%, green); */
+	/* border: 5px solid black; */
 }
 .message {
 	position: absolute;
