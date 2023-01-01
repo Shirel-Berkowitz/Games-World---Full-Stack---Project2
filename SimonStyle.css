@@ -8,7 +8,7 @@ body {
   }
 
   .button {
-    visibility: collapse;
+    visibility: visible;
     font-family: 'Amatic SC', cursive;
     border-radius: 20% !important;
     font-size: 5em;
@@ -18,10 +18,11 @@ body {
     position: absolute;
     margin-left: -45px;
     margin-top: 30px;
+    cursor: pointer;
   }
 
   .boxButton{
-    visibility: visible;
+    visibility: collapse;
     font-family: 'Amatic SC', cursive;
     border-radius: 20% !important;
     font-size: 30px;
@@ -29,6 +30,7 @@ body {
     width: 150px;
     position: absolute;
     margin-left: -75px;
+    cursor: pointer;
   }
 
   #TryAgain{
@@ -42,7 +44,7 @@ body {
   }
 
   .GameOverBox{
-    visibility: visible;
+    visibility: collapse;
     font-family: 'Amatic SC', cursive;
     text-align: center;
     margin: 0 auto;

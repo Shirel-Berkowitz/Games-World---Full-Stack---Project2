@@ -22,68 +22,75 @@
 
     <header class="header">
         <h2>Our Gaming World</h2>
+        
+        <div class="search-icon">
+            <img src="images/search-icon.png">
+            <label for="search"></label>
+            <input type="search" name="search" id="search" placeholder="חיפוש">
+        </div>
     </header>
 <body>
-    
-    <div class="Games">
-    <!-- <ul class="Games"> -->
-        <!-- <li> -->
-            <div>
+    <div>
+        <label id="hello" style="visibility: hidden;"></label>
+    </div>
+
+    <script>
+        let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
+        let hello=document.getElementById("hello");
+        if(isLoggedIn!= undefined)
+        {
+            let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
+            // hello.innerHTML= "היי "+ isLoggedIn['username']+ "," + "\n" + " הניקוד שלך הוא:" + user['score'] ;
+            hello.innerHTML = `שלום ${isLoggedIn['username']},  <br> הניקוד שצברת הוא: ${user['score']}. `;
+            hello.style.visibility="visible";
+        }
+
+    </script>
+    <div class="rows">
+            <div class="column">
                 <a href="Simon.html"><img src="images/simon.png"></a>
                 <h4>סיימון</h4>
             </div>
             
-            
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
-                <img src="images/birdsFly.png" >
-                <h4>הציפור המעופפת</h4>
+            <div class="column">
+                <a href="TheStudent.html"><img src="images/‏‏student-smile - עותק.png" ></a>
+                <h4>סטודנטית קופצת</h4>
             </div>
-           
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
+      
+            <div class="column">
                 <img src="images/fishing.png">
                 <h4>תפוס את הדג</h4>
             </div>
             
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
+            <div class="column">
                 <img src="images/angryBirds.png" >
                 <h4>ציפורים כועסות</h4>
             </div>
-            
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
+        
+            <div class="column">
                 <img src="images/flyDragon.png">
                 <h4>הדרקון המעופף</h4>
             </div>
-            
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
+      
+            <div class="column">
                 <img src="images/mousePlay.png">
                 <h4>משחק העכבר</h4>
             </div>
             
-        <!-- </li> -->
-
-        <!-- <li> -->
-            <div>
+            <div class="column">
                 <img src="images/pinguin.png">
                 <h4>הפינגויין האחרון</h4>
             </div>
+
+            <div class="column">
+                <img src="images/Xcircle.png">
+                <h4>איקס עיגול</h4>
+            </div>
             
-        <!-- </li> -->
-    <!-- </ul> -->
     </div>
 </body>
+
+<footer>
+    <h2>כל הזכויות שמורות לשיראל ואורי© </h2>
+</footer>
 </html>

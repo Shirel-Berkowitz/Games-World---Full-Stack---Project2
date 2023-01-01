@@ -123,7 +123,7 @@ function clearColor() {
   topLeft.style.backgroundColor = "darkgreen";
   topRight.style.backgroundColor = "darkred";
   bottomLeft.style.backgroundColor = "goldenrod";
-  bottomRight.style.backgroundColor = "darkblue";
+  bottomRight.style.backgroundColor = "dar  kblue";
 }
 
 function flashColor() {

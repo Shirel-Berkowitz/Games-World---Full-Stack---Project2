@@ -15,20 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="signUpStyle.css">
-
+    <script src="signUp.js"></script>
 </head>
 <body>
-    <form action="login.html" style="border:1px solid #ccc">
+    <div style="border:1px solid #ccc">
         <div class="container">
           <h1>הרשמה</h1>
           <br><br><p> מלא את הקובץ הזה על מנת להרשם לאתר<p class="bold"> שים לב! ביצירת משתמש אתה מאשר את <a href="">תקנון האתר </a></p></p>
           <hr>
       
           <label for="user"><b>שם משתמש</b></label>
-          <input type="text" placeholder="הכנס שם משתמש" name="user" id="usrename" required>
+          <input type="text" placeholder="הכנס שם משתמש" name="user" id="username" required>
 
           <br><label for="email"><b>אימייל</b></label>
-          <input type="email" placeholder="הכנס אימייל" name="email" required>
+          <input type="email" placeholder="הכנס אימייל" name="email" id="email" required>
       
           <br><label for="psw"><b>סיסמא</b></label>
           <input type="password" placeholder="הכנס סיסמא" name="psw" id="password" required>
@@ -45,7 +45,7 @@
             <button type="submit" class="signupbtn" onclick="addData()"> הרשם</button>
           </div>
         </div>
-      </form>
-      <script src="signUp.js"></script>
+      </div>
+
 </body>
 </html>
