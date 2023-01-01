@@ -1,8 +1,10 @@
 let move_speed = 3, grativy = 0.5;
 let student = document.querySelector('.student');
 let img = document.getElementById('student-smile');
-let sound_point = new Audio('sounds effect/point.mp3');
-let sound_die = new Audio('sounds effect/die.mp3');
+// let sound_point = new Audio('sounds effect/point.mp3');
+// let sound_die = new Audio('sounds effect/die.mp3');
+let sound_point = document.getElementById("point");
+let sound_die = document.getElementById("die");
 
 // getting student element properties
 let student_props = student.getBoundingClientRect();
