@@ -16,7 +16,7 @@ const topRight = document.querySelector("#topright");
 const bottomLeft = document.querySelector("#bottomleft");
 const bottomRight = document.querySelector("#bottomright");
 const startButton = document.querySelector("#start");
-const menueButton = document.querySelector("#menue");
+const menuButton = document.querySelector("#menu");
 const tryAgainButton = document.querySelector("#TryAgain");
 const gameOverBox = document.querySelector("#GameOverBox");
 const boxButton = document.querySelector(".boxButton");
@@ -33,11 +33,11 @@ startButton.addEventListener('click', (event) => {
 tryAgainButton.addEventListener('click', (event) => {
   play();
   gameOverBox.style.visibility = "hidden";
-  menueButton.style.visibility = "hidden";
+  menuButton.style.visibility = "hidden";
   boxButton.style.visibility = "hidden";
 });
 
-menueButton.addEventListener('click', (event) => {
+menuButton.addEventListener('click', (event) => {
   window.location.href = "homePage.html";
   gameOverBox.style.visibility = "hidden";
   boxButton.style.visibility = "hidden";
@@ -189,7 +189,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 100 && good) {
+  if (playerOrder.length == 20 && good) {
     winGame();
   }
 
@@ -199,8 +199,8 @@ function check() {
     setTimeout(() => {
       gameOverBox.style.visibility = "visible"
       boxButton.style.visibility = "visible";
-      menueButton.style.visibility = "visible";
-    }, 400);
+      menuButton.style.visibility = "visible";
+    }, 600);
     
     setTimeout(() => {
       turnCounter.innerHTML = turn;
@@ -218,7 +218,6 @@ function check() {
     turnCounter.innerHTML = turn;
     intervalId = setInterval(gameTurn, 800);
   }
-
 }
 
 function winGame() {

@@ -20,7 +20,7 @@ message.classList.add('messageStyle');
 
 document.addEventListener('keydown', (e) => {
     
-    if(e.key == 'Enter' && game_state != 'Play'){
+    if(e.key == ' ' && game_state != 'Play'){
         document.querySelectorAll('.books_pile').forEach((e) => {
             e.remove();
         });
@@ -47,9 +47,10 @@ function play(){
             if(books_pile_props.right <= 0){
                 element.remove();
             }else{
+                //check that the student doesn't touch the books
                 if(student_props.left < books_pile_props.left + books_pile_props.width && student_props.left + student_props.width > books_pile_props.left && student_props.top < books_pile_props.top + books_pile_props.height && student_props.top + student_props.height > books_pile_props.top){
                     game_state = 'End';
-                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
+                    message.innerHTML = 'Game Over' + '<br>Press Space To Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
@@ -91,6 +92,7 @@ function play(){
             message.classList.remove('messageStyle');
             return;
         }
+        //move the student by 1px
         student.style.top = student_props.top + student_dy + 'px';
         student_props = student.getBoundingClientRect();
         requestAnimationFrame(apply_gravity);
