@@ -18,7 +18,7 @@
     <script src="signUp.js"></script>
 </head>
 <body>
-    <form action="homePage.html" style="border:1px solid #ccc">
+    <form style="border:1px solid #ccc" onsubmit="return addData()">
         <div class="container">
           <h1>הרשמה</h1>
           <br><br><p> מלא את הקובץ הזה על מנת להרשם לאתר<p class="bold"> שים לב! ביצירת משתמש אתה מאשר את <a href="">תקנון האתר </a></p></p>
@@ -42,7 +42,7 @@
             
           <div class="clearfix">
             <a href="login.html"><button type="button" class="cancelbtn" >ביטול</button></a>
-            <button type="submit" class="signupbtn" onclick="addData()"> הרשם</button>
+            <button type="submit" class="signupbtn" formaction="homaPage.html"> הרשם</button>
           </div>
         </div>
       </form>

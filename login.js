@@ -30,13 +30,15 @@ function checkData() {
     if (flag == true) {
         let userLoggedIn = {
             "loggedIn": true,
-            "username": enteredUsername = document.getElementById("username").value
+            "username": document.getElementById("username").value
         }
         localStorage.setItem("userLoggedIn", JSON.stringify(userLoggedIn));
-        window.location.assign("homePage.html");
+        alert("right username or password");
+        return true;
     } 
     else {
         alert("wrong username or password");
+        return false;
     }
 }
 

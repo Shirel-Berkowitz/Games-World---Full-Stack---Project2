@@ -9,8 +9,8 @@ let strict = true;
 let noise = true;
 let on = true;
 let win;
-let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
-let hello=document.getElementById("hello");
+// let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
+// let hello=document.getElementById("hello");
 
 const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topleft");
@@ -27,21 +27,6 @@ const winBoxButtons = document.querySelector(".WinBoxButtons");
 const playAgainButton = document.querySelector("#PlayAgain");
 const winMenuButton = document.querySelector("#winMenu");
 
-// //log in check
-// if(isLoggedIn!= undefined)
-//   {
-//     let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
-//     hello.innerHTML = `שלום ${isLoggedIn['username']},  <br> הניקוד שצברת הוא: ${user['score']}. `;
-//     hello.style.visibility="visible";
-//     byebye.innerHTML="התנתקות";
-//     byebye.style.visibility="visible";          
-//   }
-// else{
-//     hello.innerHTML = "שלום אורח, <br> התחבר";
-//     hello.style.visibility="visible";
-//     signin.innerHTML="התחברות";
-//     signin.style.visibility="visible";
-// }
 
 startButton.addEventListener('click', (event) => {
   if (on || win) {
@@ -228,6 +213,12 @@ function check() {
     winBox.style.visibility = "visible";
     winBoxButtons.style.visibility = "visible";
     winMenuButton.style.visibility = "visible";
+
+    //JS for the TotalScore when the game is over
+    let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
+    let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
+    user["score"]=parseInt(user["score"])+turn;
+    localStorage.setItem(user["username"], JSON.stringify(user));
   }
 
   if (good == false) {
