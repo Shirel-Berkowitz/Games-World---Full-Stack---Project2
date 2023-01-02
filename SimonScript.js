@@ -20,6 +20,8 @@ const menuButton = document.querySelector("#menu");
 const tryAgainButton = document.querySelector("#TryAgain");
 const gameOverBox = document.querySelector("#GameOverBox");
 const boxButton = document.querySelector(".boxButton");
+const winBox = document.querySelector(".WinBox");
+const winBoxButtons = document.querySelector(".WinBoxButtons");
 
 
 startButton.addEventListener('click', (event) => {
@@ -189,8 +191,11 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 20 && good) {
+  if (playerOrder.length == 3 && good) {
     winGame();
+    winBox.style.visibility = "visible";
+    winBoxButtons.style.visibility = "visible";
+    menuButton.style.visibility = "visible";
   }
 
   if (good == false) {
