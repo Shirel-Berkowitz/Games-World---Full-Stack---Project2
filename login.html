@@ -19,27 +19,30 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>Welcome to</h1>
-        <h2>Our Gaming World</h2>
-    </header>
+    <form action="homePage.html">
+        <header class="header">
+            <h1>Welcome to</h1>
+            <h2>Our Gaming World</h2>
+        </header>
+        
+        <div class="loginbox">
+                <h1>התחבר כאן</h1>
+                <div>
+                    <p>שם משתמש</p>
+                    <input type="text" name="username" id="username" placeholder="הקלד שם משתמש" required>
+                    <p>סיסמא</p>
+                    <input type="password" name="password" id="password" placeholder="הקלד סיסמא" required>
+                    <center>
+                        <input type="submit" name="submit" value="התחבר" onclick="checkData()">
+                        <br><a href="#">שכחתי סיסמא</a>
+                        <br><br><a href="signUp.html">משתמש חדש? לחץ כאן</a>
+                    </center>
+                    
+                </div>
+                <script src="login.js"></script>
+           
+        </div> 
+    </form>
     
-    <div class="loginbox">
-            <h1>התחבר כאן</h1>
-            <div>
-                <p>שם משתמש</p>
-                <input type="text" name="username" id="username" placeholder="הקלד שם משתמש" required>
-                <p>סיסמא</p>
-                <input type="password" name="password" id="password" placeholder="הקלד סיסמא" required>
-                <center>
-                    <input type="submit" name="submit" value="התחבר" onclick="checkData()">
-                    <br><a href="#">שכחתי סיסמא</a>
-                    <br><br><a href="signUp.html">משתמש חדש? לחץ כאן</a>
-                </center>
-                
-            </div>
-            <script src="login.js"></script>
-       
-    </div> 
 </body>
 </html>

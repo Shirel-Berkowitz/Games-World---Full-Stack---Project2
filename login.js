@@ -48,7 +48,6 @@ function validateFildes() {
 
     if (user != undefined) {
         password = user['password'];
-        // enteredPassword = enteredPassword;
         if (enteredPassword == password) {
             return true;
         }

@@ -53,7 +53,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 
 hr {
   border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 /* Set a style for all buttons */
@@ -112,10 +112,11 @@ button:hover {
   width: 50%;
 }
 
+/* location of both the buttons */
 .clearfix button{
     width: 200px;
     margin-bottom: 20px;
-    bottom: 8px;
+    bottom: 0px;
 }
 
 .clearfix button a{
@@ -126,7 +127,7 @@ button:hover {
 
 /* Add padding to container elements */
 .container {
-  padding: 16px;
+  padding: 8px;
   text-align: center;
   display: block;
 }
