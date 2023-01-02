@@ -22,7 +22,12 @@ function addData() {
         'score': 0
     };
 
+    let userLoggedIn = {
+        "loggedIn": true,
+        "username": enteredUsername = document.getElementById("username").value
+    }
+    
     localStorage.setItem(username, JSON.stringify(user));
-    window.location.replace("login.html");
+    window.location.replace("homePage.html");
     return false;
 }

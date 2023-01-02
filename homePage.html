@@ -29,9 +29,12 @@
             <input type="search" name="search" id="search" placeholder="חיפוש">
         </div>
     </header>
+    
 <body>
     <div>
         <label id="hello" style="visibility: hidden;"></label>
+        <button id="byebye" style="visibility: hidden;" onclick="signOut()"></button>
+        <button id="signin" style="visibility: hidden;" onclick="signIn()"></button>
     </div>
 
     <script>
@@ -40,10 +43,36 @@
         if(isLoggedIn!= undefined)
         {
             let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
-            // hello.innerHTML= "היי "+ isLoggedIn['username']+ "," + "\n" + " הניקוד שלך הוא:" + user['score'] ;
             hello.innerHTML = `שלום ${isLoggedIn['username']},  <br> הניקוד שצברת הוא: ${user['score']}. `;
             hello.style.visibility="visible";
+            byebye.innerHTML="התנתקות";
+            byebye.style.visibility="visible";
+            
         }
+        else{
+
+            hello.innerHTML = "שלום אורח, <br> נא התחבר";
+            hello.style.visibility="visible";
+            signin.innerHTML="התחברות";
+            signin.style.visibility="visible";
+
+        }
+
+        
+        function signOut(){
+            if(isLoggedIn!=undefined)
+                localStorage.removeItem("userLoggedIn");
+                hello.innerHTML = "שלום אורח, <br> נא התחבר";
+                hello.style.visibility="visible";
+                byebye.style.visibility="hidden";
+                signin.innerHTML="התחברות";
+                signin.style.visibility="visible";
+        
+            }
+
+        function signIn(){
+                window.location.replace("login.html");
+        }    
 
     </script>
     <div class="rows">

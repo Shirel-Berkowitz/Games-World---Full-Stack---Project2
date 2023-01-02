@@ -64,6 +64,37 @@ body{
     color: darkgoldenrod;
 } 
 
+#byebye{
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+    color: chocolate;
+    background-color:antiquewhite ;
+    border-color: antiquewhite;
+    border: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#signin{
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+    color: chocolate;
+    background-color:antiquewhite ;
+    border-color: antiquewhite;
+    border: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+    
+
 .search-icon img{
     position: absolute;
     top: 0px;
