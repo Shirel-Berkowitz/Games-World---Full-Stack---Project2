@@ -1,5 +1,5 @@
-body {
-    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/nasty_fabric.png)
+  body {
+    background-color: bisque;
   }
   
   h1{
@@ -63,6 +63,53 @@ body {
     border-radius: 5%;
   }
   
+  .WinBox{
+    visibility: collapse;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    height: 380px;
+    background: tan;
+    border-style: outset;
+    color: black;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 20px 30px;
+    border-radius: 5%
+  }
+
+  .WinBoxButtons{
+    visibility: collapse;
+    font-family: 'Amatic SC', cursive;
+    border-radius: 20% !important;
+    font-size: 30px;
+    height: 65px;
+    width: 150px;
+    position: absolute;
+    margin-left: -75px;
+    cursor: pointer;
+  }
+
+  #PlayAgain{
+    background-color: rgb(112, 155, 112);
+    margin-top: 0px;
+  }
+
+  #left_bar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  #home_icon{
+    height: 35px;
+    width: 35px;
+  }
+
   .text2 {
     position: absolute;
     font-family: 'Amatic SC', cursive;
@@ -103,7 +150,7 @@ body {
     border-style: solid;
     border-width: 10px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 20px;
     box-shadow: 8px 8px 15px 5px #888888;
   }
   

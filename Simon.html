@@ -27,7 +27,9 @@
 </head>
 
 <body>
-
+  <div id="left_bar">
+    <a href="homePage.html"><img src="images/home.jpg" alt="home" id="home_icon"></a>
+  </div>
   <div id="outer-circle">
     <div id="topleft"></div>
     <div id="topright"></div>
@@ -47,8 +49,14 @@
         <h3>High score:</h3>
         <button class="boxButton" id="TryAgain">Try again</button>
         <button class="boxButton" id="menu">Main menu</button>
-       
-      </div>     
+      </div>    
+      <div class="WinBox" id="WinBox">
+        <h1>Congratulations!</h1>
+        <h2>you won!</h2>
+        <h3>Total score:{#turn.innerHTML}</h3>
+        <button class="WinBoxButtons" id="PlayAgain">Play again!</button>
+        <button class="WinBoxButtons" id="menu">Main menu</button>
+      </div> 
     </div>
   </div>
 
