@@ -27,7 +27,7 @@
 	left: 100vw;
 	height: 60%;
 	width: 14%;
-	background: url('images/books_pile.png') center;
+	background: url('images/books_pile2.png') center;
 	background-size: cover;
 	/* background:radial-gradient(lightgreen 50%, green); */
 	/* border: 5px solid black; */
@@ -38,9 +38,10 @@
 	color: black;
 	top: 30%;
 	left: 50%;
-	font-size: 4em;
+	font-size: 2em;
 	transform: translate(-50%, -50%);
 	text-align: center;
+    font-family: 'Varela Round', sans-serif;
 }
 .messageStyle{
 	background: white;

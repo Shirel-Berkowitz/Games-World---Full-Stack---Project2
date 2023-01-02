@@ -52,7 +52,7 @@ function play(){
                 //check that the student doesn't touch the books
                 if(student_props.left < books_pile_props.left + books_pile_props.width && student_props.left + student_props.width > books_pile_props.left && student_props.top < books_pile_props.top + books_pile_props.height && student_props.top + student_props.height > books_pile_props.top){
                     game_state = 'End';
-                    message.innerHTML = 'Game Over' + '<br>Press Space To Restart';
+                    message.innerHTML = 'איי איי איי זה היה קרוב!' + '<br>לחץ/י על מקש הרווח להתחלה מחדש';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
