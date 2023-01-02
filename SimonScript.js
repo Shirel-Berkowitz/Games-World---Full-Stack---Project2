@@ -22,13 +22,15 @@ const gameOverBox = document.querySelector("#GameOverBox");
 const boxButton = document.querySelector(".boxButton");
 const winBox = document.querySelector(".WinBox");
 const winBoxButtons = document.querySelector(".WinBoxButtons");
+const playAgainButton = document.querySelector("#PlayAgain");
+const winMenuButton = document.querySelector("#winMenu");
+
 
 
 startButton.addEventListener('click', (event) => {
   if (on || win) {
     play();
     startButton.style.visibility = "hidden";
-    // boxButton.style.visibility = "hidden";
   }
 });
 
@@ -39,12 +41,25 @@ tryAgainButton.addEventListener('click', (event) => {
   boxButton.style.visibility = "hidden";
 });
 
+playAgainButton.addEventListener('click', (event) => {
+  play();
+  winBox.style.visibility = "hidden";
+  winBoxButtons.style.visibility = "hidden";
+  playAgainButton.style.visibility = "hidden";
+  menuButton.style.visibility = "hidden";
+});
+
 menuButton.addEventListener('click', (event) => {
   window.location.href = "homePage.html";
   gameOverBox.style.visibility = "hidden";
   boxButton.style.visibility = "hidden";
 });
 
+winMenuButton.addEventListener('click', (event) => {
+  window.location.href = "homePage.html";
+  winBox.style.visibility = "hidden";
+  winBoxButtons.style.visibility = "hidden";
+});
 
 function play() {
   win = false;
@@ -195,7 +210,7 @@ function check() {
     winGame();
     winBox.style.visibility = "visible";
     winBoxButtons.style.visibility = "visible";
-    menuButton.style.visibility = "visible";
+    winMenuButton.style.visibility = "visible";
   }
 
   if (good == false) {

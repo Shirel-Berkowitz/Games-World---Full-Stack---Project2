@@ -44,6 +44,11 @@
     margin-top: 70px;
   }
 
+  #winMenu{
+    background-color: #c7716a;
+    margin-top: 70px;
+  }
+
   .GameOverBox{
     visibility: collapse;
     font-family: 'Amatic SC', cursive;
