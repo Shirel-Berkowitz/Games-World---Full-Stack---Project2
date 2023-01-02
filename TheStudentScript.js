@@ -35,6 +35,9 @@ document.addEventListener('keydown', (e) => {
         message.classList.remove('messageStyle');
         play();
     }
+    else if(e.key == 'Enter'){
+        window.location.href = "homePage.html";
+    }
 });
 
 function play(){
@@ -52,7 +55,7 @@ function play(){
                 //check that the student doesn't touch the books
                 if(student_props.left < books_pile_props.left + books_pile_props.width && student_props.left + student_props.width > books_pile_props.left && student_props.top < books_pile_props.top + books_pile_props.height && student_props.top + student_props.height > books_pile_props.top){
                     game_state = 'End';
-                    message.innerHTML = 'איי איי איי זה היה קרוב!' + '<br>לחץ/י על מקש הרווח להתחלה מחדש';
+                    message.innerHTML = 'איייי זה היה קרוב!' + '<br>הניקוד שלך: '+ score_val.innerHTML + '<br>לחץ/י על מקש הרווח להתחלה מחדש או על enter ע"מ לחזור לדף הבית';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
