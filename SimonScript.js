@@ -1,7 +1,7 @@
 let order = [];
 let playerOrder = [];
 let flash;
-let turn;
+let turn;  //count the scores
 let good;
 let compTurn;
 let intervalId;
@@ -9,8 +9,7 @@ let strict = true;
 let noise = true;
 let on = true;
 let win;
-// let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
-// let hello=document.getElementById("hello");
+
 
 const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topleft");
@@ -216,7 +215,7 @@ function check() {
     WinBoxButtons.style.visibility = "visible";
     winMenuButton.style.visibility = "visible";  
 
-    //JS for the TotalScore when the game is over
+    //JS for the TotalScore when the user won
     let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
     let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
     user["score"]=parseInt(user["score"])+turn;

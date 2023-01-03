@@ -23,32 +23,32 @@
 
 
 <body>
-    <form action="">
 
         <header class="header">
             <h2>?Forgot Your Password</h2>
         </header>
 
-        <div class="box">
+        <form class="box" onsubmit="return change(event)">
             <img src="images/password_reset.png">
             <input type="email" name="email" id="email" placeholder="הקש אימייל" required>
-			<button id="btn" >איפוס סיסמא</button>
+            <button id="btn" formaction="login.html">איפוס סיסמא</button>
             <script>
-                let btn=document.getElementById('btn');
-                btn.addEventListener('click', () =>{
-                     btn.textContent= 'חזרה להתחברות';
-                     
-                     if(btn.textContent=='חזרה להתחברות'){
-                        // window.location.replace("login.html");
-                    }
-                    // alert("סיסמתך נשלחה למייל");
+            
+                function change(event){
+                    let btn=document.getElementById("btn");
                     
-                   
-
-                });
+                        if(btn.innerHTML=='חזרה להתחברות'){
+                        return true;
+                    }
+                    else{
+                            alert("סיסמתך נשלחה למייל");
+                            btn.innerHTML='חזרה להתחברות';
+                            return false;
+                        }
+                } 
+                 
             </script>
-        </div>
-    </form>
+        </form>
 
 </body>
 
