@@ -31,8 +31,22 @@
 
         <div class="box">
             <img src="images/password_reset.png">
-            <input type="email" name="email" id="email" placeholder="הקש אימייל">
-			<button onclick="showSpinner()">איפוס סיסמא</button>
+            <input type="email" name="email" id="email" placeholder="הקש אימייל" required>
+			<button id="btn" >איפוס סיסמא</button>
+            <script>
+                let btn=document.getElementById('btn');
+                btn.addEventListener('click', () =>{
+                     btn.textContent= 'חזרה להתחברות';
+                     
+                     if(btn.textContent=='חזרה להתחברות'){
+                        // window.location.replace("login.html");
+                    }
+                    // alert("סיסמתך נשלחה למייל");
+                    
+                   
+
+                });
+            </script>
         </div>
     </form>
 

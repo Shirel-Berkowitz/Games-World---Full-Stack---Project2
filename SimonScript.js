@@ -23,7 +23,7 @@ const tryAgainButton = document.querySelector("#TryAgain");
 const gameOverBox = document.querySelector("#GameOverBox");
 const boxButton = document.querySelector(".boxButton");
 const winBox = document.querySelector(".WinBox");
-const winBoxButtons = document.querySelector(".WinBoxButtons");
+const WinBoxButtons = document.querySelector(".WinBoxButtons");
 const playAgainButton = document.querySelector("#PlayAgain");
 const winMenuButton = document.querySelector("#winMenu");
 
@@ -46,9 +46,10 @@ tryAgainButton.addEventListener('click', (event) => {
 playAgainButton.addEventListener('click', (event) => {
   play();
   winBox.style.visibility = "hidden";
-  winBoxButtons.style.visibility = "hidden";
+  WinBoxButtons.style.visibility = "hidden";
   playAgainButton.style.visibility = "hidden";
   menuButton.style.visibility = "hidden";
+  winMenuButton.style.visibility="hidden";
 });
 
 menuButton.addEventListener('click', (event) => {
@@ -60,7 +61,7 @@ menuButton.addEventListener('click', (event) => {
 winMenuButton.addEventListener('click', (event) => {
   window.location.href = "homePage.html";
   winBox.style.visibility = "hidden";
-  winBoxButtons.style.visibility = "hidden";
+  WinBoxButtons.style.visibility = "hidden";
 });
 
 function play() {
@@ -211,8 +212,9 @@ function check() {
   if (playerOrder.length == 3 && good) {
     winGame();
     winBox.style.visibility = "visible";
-    winBoxButtons.style.visibility = "visible";
-    winMenuButton.style.visibility = "visible";
+    document.getElementById("win-score").innerHTML=turn;
+    WinBoxButtons.style.visibility = "visible";
+    winMenuButton.style.visibility = "visible";  
 
     //JS for the TotalScore when the game is over
     let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
@@ -226,6 +228,7 @@ function check() {
     turnCounter.innerHTML = "NO!";
     setTimeout(() => {
       gameOverBox.style.visibility = "visible"
+      document.getElementById("lose-score").innerHTML=turn;
       boxButton.style.visibility = "visible";
       menuButton.style.visibility = "visible";
     }, 600);

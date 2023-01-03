@@ -17,8 +17,8 @@
 } 
 
 body{
-    /* background: url(images/password_reset.png);
-    background-size: cover; */
+    background-color: antiquewhite;
+    background-size: cover; 
     background-position: center;
 }
 
@@ -74,10 +74,12 @@ input[type=email], .box button {
     color: white;
     cursor: pointer;
     font-weight: bold;
+    textconte
 }
 
 .box img{
     position: absolute;
-    width: 20px;
+    width: 300px;
     right: 20%;
+    top: 80px;    
 }

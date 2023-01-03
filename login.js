@@ -33,7 +33,6 @@ function checkData() {
             "username": document.getElementById("username").value
         }
         localStorage.setItem("userLoggedIn", JSON.stringify(userLoggedIn));
-        alert("right username or password");
         return true;
     } 
     else {
