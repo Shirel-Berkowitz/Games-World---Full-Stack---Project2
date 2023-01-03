@@ -52,14 +52,24 @@ function play(){
             if(books_pile_props.right <= 0){
                 element.remove();
             }else{
-                //check that the student doesn't touch the books
+                 //check that the student doesn't touch the books
                 if(student_props.left < books_pile_props.left + books_pile_props.width && student_props.left + student_props.width > books_pile_props.left && student_props.top < books_pile_props.top + books_pile_props.height && student_props.top + student_props.height > books_pile_props.top){
                     game_state = 'End';
                     message.innerHTML = 'איייי זה היה קרוב!' + '<br>הניקוד שלך: '+ score_val.innerHTML + '<br>לחץ/י על מקש הרווח להתחלה מחדש או על enter ע"מ לחזור לדף הבית';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
+                    
+                    //JS for the TotalScore when the game is over
+                    let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
+                    let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
+                    user["score"]=parseInt(user["score"])+parseInt(score_val.innerHTML);
+                    localStorage.setItem(user["username"], JSON.stringify(user));
+                    
                     return;
+
+                     
+
                 }else{
                     if(books_pile_props.right < student_props.left && books_pile_props.right + move_speed >= student_props.left && element.increase_score == '1'){
                         score_val.innerHTML =+ score_val.innerHTML + 1;

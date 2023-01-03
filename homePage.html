@@ -40,6 +40,9 @@
     <script>
         let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
         let hello=document.getElementById("hello");
+        let byebye=document.getElementById("byebye");
+        let signin=document.getElementById("signin");
+
         if(isLoggedIn!= undefined)
         {
             let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
@@ -50,7 +53,7 @@
             
         }
         else{
-
+            
             hello.innerHTML = "שלום אורח, <br> נא התחבר";
             hello.style.visibility="visible";
             signin.innerHTML="התחברות";

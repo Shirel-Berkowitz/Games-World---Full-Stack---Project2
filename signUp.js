@@ -25,9 +25,10 @@ function addData() {
     let userLoggedIn = {
         "loggedIn": true,
         "username": enteredUsername = document.getElementById("username").value
-    }
+    }   
     
     localStorage.setItem(username, JSON.stringify(user));
+    localStorage.setItem("userLoggedIn", JSON.stringify(userLoggedIn));
     window.location.replace("homePage.html");
     return false;
 }

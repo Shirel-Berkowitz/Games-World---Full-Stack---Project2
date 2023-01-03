@@ -140,7 +140,7 @@ body{
 
 }
 
-.loginbox input[type="submit"]{
+.loginbox button{
     border: none;
     outline: none;
     height: 30px;
@@ -153,7 +153,7 @@ body{
     align-items: center;
 }
 
-.loginbox input[type="submit"]:hover{
+.loginbox button:hover{
     cursor: pointer;
     background: antiquewhite;
     color: #000;
