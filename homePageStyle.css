@@ -165,9 +165,42 @@ body{
     
 }
 
-.gameInDevelop:hover{
-    filter: brightness(50%);
-    
+.img__wrap {
+    -webkit-filter: brightness(100%);
+    position: relative;
+    height: 200px;
+    width: 257px;
+}
+
+.img__wrap:hover img{
+    /* filter: brightness(70%); */
+    -webkit-filter: brightness(60%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+  
+.img__description {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 28px;
+    -webkit-text-stroke: 0.1px white;
+    color: brown;
+    visibility: hidden;
+    opacity: 1;
+    font-size: 23px;
+    /* transition effect*/
+    transition: opacity .2s, visibility .2s;
+}
+  
+.img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+    filter: brightness(100%);
 }
 
 footer h2{
