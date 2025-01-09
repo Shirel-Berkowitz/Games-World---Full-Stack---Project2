@@ -1,134 +1,150 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="homePageStyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="homePageStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
 
-    <header class="header">
-        <h2>Our Gaming World</h2>
-        
-        <div class="search-icon">
-            <img src="images/search-icon.png">
-            <label for="search"></label>
-            <input type="search" name="search" id="search" placeholder="חיפוש">
-        </div>
-    </header>
-    
-<body>
+  <header class="header">
+    <h2>Our Gaming World</h2>
+
+    <div class="search-icon">
+      <img src="images/search-icon.png" />
+      <label for="search"></label>
+      <input type="search" name="search" id="search" placeholder="חיפוש" />
+    </div>
+  </header>
+
+  <body>
     <div>
-        <label id="hello" style="visibility: hidden;"></label>
-        <button id="byebye" style="visibility: hidden;" onclick="signOut()"></button>
-        <button id="signin" style="visibility: hidden;" onclick="signIn()"></button>
+      <label id="hello" style="visibility: hidden"></label>
+      <button
+        id="byebye"
+        style="visibility: hidden"
+        onclick="signOut()"
+      ></button>
+      <button
+        id="signin"
+        style="visibility: hidden"
+        onclick="signIn()"
+      ></button>
     </div>
 
     <script>
-        let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
-        let hello=document.getElementById("hello");
-        let byebye=document.getElementById("byebye");
-        let signin=document.getElementById("signin");
+      let isLoggedIn = JSON.parse(localStorage.getItem("userLoggedIn"));
+      let hello = document.getElementById("hello");
+      let byebye = document.getElementById("byebye");
+      let signin = document.getElementById("signin");
 
-        if(isLoggedIn!= undefined)
-        {
-            let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
-            hello.innerHTML = `שלום ${isLoggedIn['username']},  <br> הניקוד שצברת הוא: ${user['score']}. `;
-            hello.style.visibility="visible";
-            byebye.innerHTML="התנתקות";
-            byebye.style.visibility="visible";
-            
-        }
-        else{
-            
-            hello.innerHTML = "שלום אורח, <br> נא התחבר";
-            hello.style.visibility="visible";
-            signin.innerHTML="התחברות";
-            signin.style.visibility="visible";
+      if (isLoggedIn != undefined) {
+        let user = JSON.parse(localStorage.getItem(isLoggedIn["username"]));
+        hello.innerHTML = `שלום ${isLoggedIn["username"]},  <br> הניקוד שצברת הוא: ${user["score"]}. `;
+        hello.style.visibility = "visible";
+        byebye.innerHTML = "התנתקות";
+        byebye.style.visibility = "visible";
+      } else {
+        hello.innerHTML = "שלום אורח, <br> נא התחבר";
+        hello.style.visibility = "visible";
+        signin.innerHTML = "התחברות";
+        signin.style.visibility = "visible";
+      }
 
-        }
+      function signOut() {
+        if (isLoggedIn != undefined) localStorage.removeItem("userLoggedIn");
+        hello.innerHTML = "שלום אורח, <br> נא התחבר";
+        hello.style.visibility = "visible";
+        byebye.style.visibility = "hidden";
+        signin.innerHTML = "התחברות";
+        signin.style.visibility = "visible";
+      }
 
-        
-        function signOut(){
-            if(isLoggedIn!=undefined)
-                localStorage.removeItem("userLoggedIn");
-                hello.innerHTML = "שלום אורח, <br> נא התחבר";
-                hello.style.visibility="visible";
-                byebye.style.visibility="hidden";
-                signin.innerHTML="התחברות";
-                signin.style.visibility="visible";
-        
-            }
-
-        function signIn(){
-                window.location.replace("login.html");
-        }    
-
+      function signIn() {
+        window.location.replace("login.html");
+      }
     </script>
     <div class="rows">
-            <div class="column">
-                <a href="Simon.html"><img src="images/simon.png"></a>
-                <h4>סיימון</h4>
-            </div>
-            
-            <div class="column">
-                <a href="TheStudent.html"><img src="images/backgroundStudent.png" ></a>
-                <h4>סטודנטית קופצת</h4>
-            </div>
-      
-            <div class="column img__wrap">
-                <img src="images/fishing.png">
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>תפוס את הדג</h4>
-            </div>
-            
-            <div class="column img__wrap">
-                <img src="images/angryBirds.png" >
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>ציפורים כועסות</h4>
-            </div>
-        
-            <div class="column img__wrap">
-                <img src="images/flyDragon.png">
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>הדרקון המעופף</h4>
-            </div>
-      
-            <div class="column img__wrap">
-                <img src="images/mousePlay.png">
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>משחק העכבר</h4>
-            </div>
-            
-            <div class="column img__wrap">
-                <img src="images/pinguin.png">
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>הפינגויין האחרון</h4>
-            </div>
+      <div class="column">
+        <a href="Simon.html"><img src="images/simon.png" /></a>
+        <h4>סיימון</h4>
+      </div>
 
-            <div class="column img__wrap">
-                <img src="images/Xcircle.png">
-                <h3 class="img__description">בפיתוח...</h3>
-                <h4>איקס עיגול</h4>
-            </div>
-            
+      <div class="column">
+        <a href="TheStudent.html"><img src="images/backgroundStudent.png" /></a>
+        <h4>הסטודנטית הקופצת</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/fishing.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>תפוס את הדג</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/angryBirds.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>ציפורים כועסות</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/flyDragon.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>הדרקון המעופף</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/mousePlay.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>משחק העכבר</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/pinguin.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>הפינגויין האחרון</h4>
+      </div>
+
+      <div class="column img__wrap">
+        <img src="images/Xcircle.png" />
+        <h3 class="img__description">בפיתוח...</h3>
+        <h4>איקס עיגול</h4>
+      </div>
     </div>
-</body>
+  </body>
 
-<footer>
-    <h2>כל הזכויות שמורות לשיראל ואורי© </h2>
-</footer>
+  <footer>
+    <h2>כל הזכויות שמורות לשיראל ואורי©</h2>
+  </footer>
 </html>

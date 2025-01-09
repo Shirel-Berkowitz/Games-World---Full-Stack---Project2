@@ -1,7 +1,7 @@
 let order = [];
 let playerOrder = [];
 let flash;
-let turn;  //count the scores
+let turn; //count the scores
 let good;
 let compTurn;
 let intervalId;
@@ -9,7 +9,6 @@ let strict = true;
 let noise = true;
 let on = true;
 let win;
-
 
 const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topleft");
@@ -26,15 +25,14 @@ const WinBoxButtons = document.querySelector(".WinBoxButtons");
 const playAgainButton = document.querySelector("#PlayAgain");
 const winMenuButton = document.querySelector("#winMenu");
 
-
-startButton.addEventListener('click', (event) => {
+startButton.addEventListener("click", (event) => {
   if (on || win) {
     play();
     startButton.style.visibility = "hidden";
   }
 });
 
-tryAgainButton.addEventListener('click', (event) => {
+tryAgainButton.addEventListener("click", (event) => {
   play();
   gameOverBox.style.visibility = "hidden";
   menuButton.style.visibility = "hidden";
@@ -42,22 +40,22 @@ tryAgainButton.addEventListener('click', (event) => {
   startButton.style.visibility = "hidden";
 });
 
-playAgainButton.addEventListener('click', (event) => {
+playAgainButton.addEventListener("click", (event) => {
   play();
   winBox.style.visibility = "hidden";
   WinBoxButtons.style.visibility = "hidden";
   playAgainButton.style.visibility = "hidden";
   menuButton.style.visibility = "hidden";
-  winMenuButton.style.visibility="hidden";
+  winMenuButton.style.visibility = "hidden";
 });
 
-menuButton.addEventListener('click', (event) => {
+menuButton.addEventListener("click", (event) => {
   window.location.href = "homePage.html";
   gameOverBox.style.visibility = "hidden";
   boxButton.style.visibility = "hidden";
 });
 
-winMenuButton.addEventListener('click', (event) => {
+winMenuButton.addEventListener("click", (event) => {
   window.location.href = "homePage.html";
   winBox.style.visibility = "hidden";
   WinBoxButtons.style.visibility = "hidden";
@@ -152,57 +150,57 @@ function flashColor() {
   bottomRight.style.backgroundColor = "lightskyblue";
 }
 
-topLeft.addEventListener('click', (event) => {
+topLeft.addEventListener("click", (event) => {
   if (on) {
     playerOrder.push(1);
     check();
     one();
-    if(!win) {
+    if (!win) {
       setTimeout(() => {
         clearColor();
       }, 300);
     }
   }
-})
+});
 
-topRight.addEventListener('click', (event) => {
+topRight.addEventListener("click", (event) => {
   if (on) {
     playerOrder.push(2);
     check();
     two();
-    if(!win) {
+    if (!win) {
       setTimeout(() => {
         clearColor();
       }, 300);
     }
   }
-})
+});
 
-bottomLeft.addEventListener('click', (event) => {
+bottomLeft.addEventListener("click", (event) => {
   if (on) {
     playerOrder.push(3);
     check();
     three();
-    if(!win) {
+    if (!win) {
       setTimeout(() => {
         clearColor();
       }, 300);
     }
   }
-})
+});
 
-bottomRight.addEventListener('click', (event) => {
+bottomRight.addEventListener("click", (event) => {
   if (on) {
     playerOrder.push(4);
     check();
     four();
-    if(!win) {
+    if (!win) {
       setTimeout(() => {
         clearColor();
       }, 300);
     }
   }
-})
+});
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
@@ -211,14 +209,14 @@ function check() {
   if (playerOrder.length == 3 && good) {
     winGame();
     winBox.style.visibility = "visible";
-    document.getElementById("win-score").innerHTML=turn;
+    document.getElementById("win-score").innerHTML = turn;
     WinBoxButtons.style.visibility = "visible";
-    winMenuButton.style.visibility = "visible";  
+    winMenuButton.style.visibility = "visible";
 
     //JS for the TotalScore when the user won
-    let isLoggedIn= JSON.parse(localStorage.getItem("userLoggedIn"));
-    let user=JSON.parse(localStorage.getItem(isLoggedIn['username']));
-    user["score"]=parseInt(user["score"])+turn;
+    let isLoggedIn = JSON.parse(localStorage.getItem("userLoggedIn"));
+    let user = JSON.parse(localStorage.getItem(isLoggedIn["username"]));
+    user["score"] = parseInt(user["score"]) + turn;
     localStorage.setItem(user["username"], JSON.stringify(user));
   }
 
@@ -226,12 +224,12 @@ function check() {
     flashColor();
     turnCounter.innerHTML = "NO!";
     setTimeout(() => {
-      gameOverBox.style.visibility = "visible"
-      document.getElementById("lose-score").innerHTML=turn;
+      gameOverBox.style.visibility = "visible";
+      document.getElementById("lose-score").innerHTML = turn;
       boxButton.style.visibility = "visible";
       menuButton.style.visibility = "visible";
     }, 600);
-    
+
     setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
@@ -256,4 +254,3 @@ function winGame() {
   on = false;
   win = true;
 }
-

@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loginStyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="loginStyle.css" />
     <title>login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <form onsubmit="return checkData()">
-        <header class="header">
-            <h1>Welcome to</h1>
-            <h2>Our Gaming World</h2>
-        </header>
-        
-        <div class="loginbox">
-                <h1>התחבר כאן</h1>
-                <div>
-                    <p>שם משתמש</p>
-                    <input type="text" name="username" id="username" placeholder="הקלד שם משתמש" required>
-                    <p>סיסמא</p>
-                    <input type="password" name="password" id="password" placeholder="הקלד סיסמא" required>
-                    <center>
-                        <button type="submit" formaction="homePage.html" >התחבר</button>
-                        <br><br><a href="forgetpwd.html">שכחתי סיסמא</a>
-                        <br><br><a href="signUp.html">משתמש חדש? לחץ כאן</a>
-                    </center>
-                    
-                </div>
-                <script src="login.js"></script>
-           
-        </div> 
+      <header class="header">
+        <h1>Welcome to</h1>
+        <h2>Our Games World</h2>
+      </header>
+
+      <div class="loginbox">
+        <h1>התחבר/י כאן</h1>
+        <div>
+          <p>שם משתמש</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="הקלד שם משתמש"
+            required
+          />
+          <p>סיסמא</p>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="הקלד סיסמא"
+            required
+          />
+          <center>
+            <button type="submit" formaction="homePage.html">התחבר/י</button>
+            <br /><br /><a href="forgetpwd.html">שכחתי סיסמא</a> <br /><br /><a
+              href="signUp.html"
+              >משתמש חדש? לחץ כאן</a
+            >
+          </center>
+        </div>
+        <script src="login.js"></script>
+      </div>
     </form>
-    
-</body>
+  </body>
 </html>
