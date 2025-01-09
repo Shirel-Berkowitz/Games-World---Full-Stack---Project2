@@ -1,5 +1,5 @@
-# **Welcome to our gaming world!**
-![image](https://github.com/user-attachments/assets/16dcd557-076a-43c6-b618-8ff691c49e90)
+# **Welcome to our games world!**
+![image](https://github.com/user-attachments/assets/df4f7a77-597b-4506-9b1a-4a61d761510c)
 
 We developed a games website for you to enjoy!
 For now, 2 very fun games are there for you, for maximum fun!
